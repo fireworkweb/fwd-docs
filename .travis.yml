@@ -9,9 +9,8 @@ addons:
       - ubuntu-toolchain-r-test
     packages:
       - g++-4.8
-install:
-  - yarn global add vuepress
 script:
+  - yarn install
   - yarn build
   - yarn lint
 cache:
