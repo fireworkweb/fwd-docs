@@ -1,5 +1,5 @@
 module.exports = {
-    base: '/',
+    base: '/fwd-docs/',
     locales: {
         '/': {
             lang: 'en-US',
