@@ -7,7 +7,7 @@ section: content
 
 # Installation {#installation}
 
-## Install locally on host machine
+## Install locally on host machine {#install-locally}
 
 To run `fwd` you must have PHP 7.2 or greater. You will also need [Docker](https://docs.docker.com/install/) and [Docker Compose](https://docs.docker.com/compose/) to run your projects.
 
