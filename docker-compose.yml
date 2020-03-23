@@ -1,6 +1,6 @@
 version: "3.7"
 services:
-  watch:
+  app:
     image: "${FWD_IMAGE_NODE}"
     build:
       context: ./docker/node-php
@@ -12,9 +12,3 @@ services:
       ASUSER: "${FWD_ASUSER}"
     ports:
      - "${FWD_HTTP_PORT}"
-
-networks:
-  fwd_local:
-  fwd_global:
-    external: true
-    name: "${FWD_NETWORK}"

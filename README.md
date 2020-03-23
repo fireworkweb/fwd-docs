@@ -4,31 +4,46 @@ Documentation for [fwd](https://github.com/fireworkweb/fwd). Created with [Jigsa
 
 ## Getting Started
 
+You need `fwd` at least 1.0-rc.8.
+
 ```bash
-# install composer dependencies
-docker run --rm --interactive --tty --volume $PWD:/app -w /app composer install
+# Build local images
+fwd build
 
-# build node-php docker image
-docker build docker/node-php -t fireworkweb/node-php:latest
+# Install node dependencies
+fwd yarn install
 
-# install node dependencies
-docker run --rm --interactive --tty --volume $PWD:/app -w /app fireworkweb/node-php yarn install
+# Start containers
+fwd start
+
+# Install composer dependencies
+fwd composer install
+
+# **RECOMMENDED** Restart all containers
+fwd stop && fwd start
 ```
 
 ### Building
 
 ```bash
 # build static files with Jigsaw
-docker run --rm --interactive --tty --volume $PWD:/app -w /app -p 3000:3000 -p 3001:3001 fireworkweb/node-php php ./vendor/bin/jigsaw build
+fwd php ./vendor/bin/jigsaw build
 
 # compile assets with Laravel Mix
 # options: dev, staging, production
-docker run --rm --interactive --tty --volume $PWD:/app -w /app -p 3000:3000 -p 3001:3001 fireworkweb/node-php yarn dev
+fwd yarn dev
 ```
 
 ### Develop
 
 ```bash
-# compile assets with Laravel Mix and watch changes
-docker run --rm --interactive --tty --volume $PWD:/app -w /app -p 3000:3000 -p 3001:3001 fireworkweb/node-php yarn watch
+# Start containers with watching
+fwd start
+```
+
+If you add any files, it will not be automatically picked up by the watcher. You need to restart:
+
+```bash
+# Restart all containers
+fwd stop && fwd start
 ```
