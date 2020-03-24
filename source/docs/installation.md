@@ -62,7 +62,7 @@ You can check if it is successfully running by executing `fwd`. It will output t
   yarn           Run yarn in a new container.
 ```
 
-## Install on projects
+## Install on projects {#install-on-projects}
 
 To add it to your project you just need to run `fwd install`. This will create the `.fwd` (environment variables) and docker-compose.yml (services definitions) files in your project (you probably want to have them versioned).
 
